@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Javascript - zadanie praktyczne oraz lekcja z czytania kodu</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+    <style>
+        .slide pre code {
+            line-height: 1.75
+        }
+    </style>
+</head>
+<body class="list">
+    <header class="caption">
+        <h1>Javascript - podstawy programowania</h1>
+        <p></p>
+    </header>
+
+    <section class="slide">
+        <div>
+            <h2>Literatura do kryptografii (przypomnienie)</h2>
+            <ul>
+                <li><a href="http://wiktorn.github.io/prezentacja-2015-kryptografia/">http://wiktorn.github.io/prezentacja-2015-kryptografia/</a> - Ta prezentacja :-)</li>
+                <li><a href="https://www.bsdcan.org/2010/schedule/attachments/135_crypto1hr.pdf">Colin Percival - Everything you need to know about cryptography in 1 hour</a> oraz <a href="https://www.youtube.com/watch?v=jzY3m5Kv7Y8">video</a></li>
+                <li><a href="https://www.coursera.org/course/crypto">Dan Boneh - Crypto I</a> oraz <a href="https://www.coursera.org/course/crypto2">Crypto II</a></li>
+                <li><a href="https://www.youtube.com/watch?v=fwcl17Q0bpk">NSA Operation ORCHESTRA: Annual Status Report</a></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="slide front-page">
+        <div>
+            <div class="logo">
+                <img src="https://www.pzu.pl/portal-theme/images/pzu-custom/logo4.png">
+            </div>
+            <div class="content">
+                <h2>Javascript - podstawy programowania</h2>
+                <p>Autor: Wiktor Niesiobędzki</p>
+                <p><a href="http://creativecommons.org/licenses/by-sa/3.0/pl/">CC-BY-SA 3.0</a><br /><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Plan</h2>
+            <ul>
+                <li>Przypomnienie składni JavaScript</li>
+                <li>Prezentacja gry - Elevator Saga</li>
+                <li>Rozwiązywanie zadań (indywidualnie)</li>
+                <li>Omówienie Waszych programów</li>
+                <li>Lekcja z czytania kodu - przykładowe rozwiązanie</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Składania JavaScript - zmienne</h2>
+            <ul>
+                <li>Zmienne definujemy poprzez<code>var nazwa_zmiennej;</code></li>
+                <li>Typy zmiennych:
+                    <ul>
+                        <li>liczby: <code>10</code>, <code>1443.31</code></li>
+                        <li>tekst: <code>"Janek"</code>, <code>'Franek'</code></li>
+                        <li>listy: <code>[1, 2, 4]</code></li>
+                        <li>obiekty/tablice: <code>{imie: "Jan"; nazwisko: "Nowak"}</code>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Składania JavaScript</h2>
+            <ul>
+                <li>Operatory:
+                    <ul>
+                        <li>+, -, *, /, %, ++, --</li>
+                        <li>+=, -=, *=, /=, %=</li>
+                        <li>==, ===, !=, !==, &gt;, &lt;, &gt;=, &lt;=</li>
+                    </ul>
+                </li>
+                <li>Definicja funkcji:
+                <code>
+function nazwa(parametr1, parametr2, ...) {
+    //kod
+    return wartość;
+}
+</code>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Składania JavaScript</h2>
+            <ul>
+                <li>Dostęp do własności obiektu: <code>objectName.propertyName</code>, <code>objectName[propertyName]</code>, <code>objectName["propertyName"]</code></li>
+                <li>Powołowyanie nowego obiektu: <code>new NazwaObiektu()</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Składania JavaScript</h2>
+            <ul>
+                <li>Konstrukcje warunkowe:
+<code>
+if (warunek1) {
+    // kod
+} else if (warunek2) {
+    // kod
+} else {
+    //kod
+}
+</code>
+                </li>
+                <li>Pętle:
+<code>
+for(inicjalizacja; warunek; wyrażenie wykonywane na koniec pętli) {
+}</code> <br /><code>
+for(i = 0; i &lt; 10; i++) {
+}
+</code>
+                </li>
+                <li>jQuery:
+<code>
+$.each(['elem1', 'elem2', 'elem3'], function (index, obj) {
+    // kod
+});
+</code>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Składania JavaScript</h2>
+            <ul>
+                <li>Operacje na listach:
+                    <ul>
+                        <li><code>[1, 2, 3].push(elem1) === [1, 2, 3, elem1]</code></li>
+                        <li><code>[1, 2, 3].pop() === 3</code> a z listy 3 znika </li>
+                        <li><code>[1, 2, 3].shift() === 1</code> a z listy 1 znika </li>
+                        <li><code>[1, 2, 3].reverse() === [3, 2, 1]</code></li>
+                        <li><code>[1, 2, 3].slice(1, 3) === [2, 3]</code></li>
+                        <li><code>[2, 1, 3].sort() === [1, 2, 3]</code> uwaga - inplace</li>
+                        <li><code>[1, 2, 3].splice(0, 2, [4, 5,]) === [3, 4, 5]</code></li>
+                        <li><code>[1, 2, 3].unshift(-1) === [-1, 1, 2, 3]</code></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Debugowanie JavaScript</h2>
+            <ul>
+                <li><code>console.assert(warunek, opis)</code></li>
+                <li><code>console.count(opis)</code></li>
+                <li><code>console.log(tekst)</code></li>
+                <li><code>console.log("Tak wyglada obiekt: %O", obiekt)</code></li>
+                <li><code>console.dir(obiekt)</code></li>
+                <li><code>console.table(tablica, [kolumna_1, kolumna_2 ...,])</code></li>
+                <li><code>console.trace()</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Gra</h2>
+                <a href="http://play.elevatorsaga.com/">http://play.elevatorsaga.com/</a>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Omówienie Waszych programów</h2>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Omówienie przykładowych rozwiązań</h2>
+            <ul>
+                <li><a href="https://github.com/bgwines/elevator-saga/blob/master/elevatoralg.js">bgwines</a></li>
+                <li><a href="https://github.com/magwo/elevatorsaga/wiki/aonsager%27s-solution">Aonsager's</a></li>
+                <li><a href="https://gist.github.com/efouts/0cbbfa125519ef83b27d">Efouts</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Literatura</h2>
+            <ul>
+                <li><a href="http://wiktorn.github.io/prezentacja-2015-javascript/">http://wiktorn.github.io/prezentacja-2015-javascript/</a> - Ta prezentacja :-)</li>
+                <li><a href="https://www.coursera.org/course/progfun">Functional programming principles in Scala</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <p class="badge"><a href="https://github.com/wiktorn">Fork me on Github</a></p>
+
+    <div class="progress">
+        <div></div>
+    </div>
+
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>
+
